@@ -4,12 +4,12 @@ import * as SC from "./ResultTicketStyled"
 
 const ResultTicket = ({ticket}) => {
     
-    const { fullName, gitLogins, email} = ticket
+    const { fullName, gitLogins, email, avatar} = ticket
         
     return ( 
         <SC.ResultTicketStyled>
             <IntroResult email={email} fullName={fullName}/>
-            <Ticket fullName={fullName} gitLogins={gitLogins}/>
+            <Ticket fullName={fullName} gitLogins={gitLogins} avatar={avatar}/>
         </SC.ResultTicketStyled>
      );
 }

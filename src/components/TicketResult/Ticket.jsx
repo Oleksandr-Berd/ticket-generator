@@ -2,7 +2,7 @@ import Logo from "../Logo/Logo";
 import * as SC from "./TicketStyled";
 const Ticket = (props) => {
 
-const {fullName, gitLogins} = props
+const {fullName, gitLogins, avatar} = props
 
   return (
     <SC.TicketStyled>
@@ -12,7 +12,7 @@ const {fullName, gitLogins} = props
           <p>Jan 31, 2025 / Austin, TX</p>
         </div>
         <div>
-          <img src="#" alt="avatar" />
+          <img src={URL.createObjectURL(avatar)} alt="avatar" />
           <div>
             <h3>{fullName}</h3>
             <p>{gitLogins}</p>
