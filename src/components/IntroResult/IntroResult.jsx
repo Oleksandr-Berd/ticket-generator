@@ -1,3 +1,5 @@
+import * as SC from "./IntroResultStyled"
+
 const IntroResult = () => {
     return ( 
         <div>

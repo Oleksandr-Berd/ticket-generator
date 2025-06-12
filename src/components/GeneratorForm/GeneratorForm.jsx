@@ -1,4 +1,4 @@
-import * as SC from "./FeneratorFormStyled";
+import * as SC from "./GeneratorFormStyled";
 import { Field, Formik, Form } from "formik";
 import { validationTicketSchema } from "../../utils/ticketSchema";
 

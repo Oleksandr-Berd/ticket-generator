@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
 
-export const GeneratorStyled = styled`
+export const GeneratorStyled = styled.div`
 
 `
