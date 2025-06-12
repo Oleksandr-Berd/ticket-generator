@@ -28,6 +28,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
           />
           <img src="#" alt="uploadAvatarIcon" />
           <p>Drag and drop or click to upload</p>
+             {formik.touched.avatar && formik.errors.avatar && (
+            <div>{formik.errors.avatar}</div>
+          )}
         </div>
 
         <div>
@@ -42,6 +45,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
             onBlur={formik.handleBlur}
             value={formik.values.fullName}
           />
+           {formik.touched.fullName && formik.errors.fullName && (
+            <div>{formik.errors.fullName}</div>
+          )}
         </div>
 
         <div>
@@ -57,6 +63,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
+          {formik.touched.email && formik.errors.email && (
+            <div>{formik.errors.email}</div>
+          )}
         </div>
 
         <div>
@@ -72,6 +81,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
             onBlur={formik.handleBlur}
             value={formik.values.gitLogin}
           />
+           {formik.touched.gitLogins && formik.errors.gitLogins && (
+            <div>{formik.errors.gitLogins}</div>
+          )}
         </div>
 
         <button type="submit">Generate My Ticket</button>

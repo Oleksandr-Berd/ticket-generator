@@ -6,7 +6,7 @@ export const validationTicketSchema = Yup.object().shape({
     // .required("Avatar is required")
     .test(
       "fileSize",
-      "File size is too large (max 5MB)",
+      "File too large. Please upload a photo under 500KB.",
       (value) => !value || (value && value.size <= 5 * 1024 * 1024)
     )
     .test(
@@ -21,7 +21,7 @@ export const validationTicketSchema = Yup.object().shape({
     .required("Full name is required"),
 
   email: Yup.string()
-    .email("Invalid email format")
+    .email("Please enter a valid email address.")
     .required("Email is required"),
 
   gitLogins: Yup.string()
