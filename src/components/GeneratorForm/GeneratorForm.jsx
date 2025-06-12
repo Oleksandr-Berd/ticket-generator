@@ -17,7 +17,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
     <SC.GeneratorFormStyled>
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <h4>Upload Avatar</h4>
+          <label>Upload Avatar</label>
           <input
             id="avatar"
             name="avatar"
@@ -28,12 +28,12 @@ const GeneratorForm = ({ ticketSubmit }) => {
           />
           <img src="#" alt="uploadAvatarIcon" />
           <p>Drag and drop or click to upload</p>
-             {formik.touched.avatar && formik.errors.avatar && (
+             {formik.touched.avatar && formik.errors.avatar ? (
             <div>{formik.errors.avatar}</div>
-          )}
+          ) : (<div>Upload your photo (JPG or PNG, max size: 500KB).</div>)}
         </div>
 
-        <div>
+        <SC.TextInputConStyled>
           <label htmlFor="fullName">
             <h4>Full Name</h4>
           </label>
@@ -48,9 +48,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
            {formik.touched.fullName && formik.errors.fullName && (
             <div>{formik.errors.fullName}</div>
           )}
-        </div>
+        </SC.TextInputConStyled>
 
-        <div>
+        <SC.TextInputConStyled>
           <label htmlFor="email">
             <h4>Email Address</h4>
           </label>
@@ -66,9 +66,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
           {formik.touched.email && formik.errors.email && (
             <div>{formik.errors.email}</div>
           )}
-        </div>
+        </SC.TextInputConStyled>
 
-        <div>
+        <SC.TextInputConStyled>
           <label htmlFor="gitLogins">
             <h4>GitHub Username</h4>
           </label>
@@ -84,9 +84,9 @@ const GeneratorForm = ({ ticketSubmit }) => {
            {formik.touched.gitLogins && formik.errors.gitLogins && (
             <div>{formik.errors.gitLogins}</div>
           )}
-        </div>
+        </SC.TextInputConStyled>
 
-        <button type="submit">Generate My Ticket</button>
+        <SC.SubmitButtonStyled type="submit">Generate My Ticket</SC.SubmitButtonStyled>
       </form>
     </SC.GeneratorFormStyled>
   );
