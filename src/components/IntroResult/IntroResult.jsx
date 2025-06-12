@@ -1,10 +1,12 @@
 import * as SC from "./IntroResultStyled"
 
-const IntroResult = () => {
+const IntroResult = ({email, fullName}) => {
+    
+    
     return ( 
         <div>
-            <h4>Congrats, Jonatan Kristof! Your ticket is ready.</h4>
-            <p>We've emailed your ticket to jonatan@email.com and will send updates in the run up to the event.</p>
+            <h4>Congrats, {fullName}! Your ticket is ready.</h4>
+            <p>We've emailed your ticket to {email} and will send updates in the run up to the event.</p>
         </div>
      );
 }

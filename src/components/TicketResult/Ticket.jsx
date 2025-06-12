@@ -1,8 +1,11 @@
 import Logo from "../Logo/Logo";
-import * as SC from "./TicketResultStyled";
-const TicketResult = () => {
+import * as SC from "./TicketStyled";
+const Ticket = (props) => {
+
+const {fullName, gitLogins} = props
+
   return (
-    <SC.TicketResultStyled>
+    <SC.TicketStyled>
       <div>
         <div>
           <Logo />
@@ -11,16 +14,16 @@ const TicketResult = () => {
         <div>
           <img src="#" alt="avatar" />
           <div>
-            <h3>name</h3>
-            <p>login</p>
+            <h3>{fullName}</h3>
+            <p>{gitLogins}</p>
           </div>
         </div>
       </div>
       <div>
         <p>#01609</p>
       </div>
-    </SC.TicketResultStyled>
+    </SC.TicketStyled>
   );
 };
 
-export default TicketResult;
+export default Ticket;

@@ -2,7 +2,7 @@ import * as SC from "./SharedLayoutStyled";
 
 import Generator from "../../components/Generator/Generator";
 import { useState } from "react";
-import TicketResult from "../../components/TicketResult/TicketResult";
+import ResultTicket from "../../components/ResultTicket/ResultTicket";
 
 const SharedLayout = () => {
   const [ticket, setTicket] = useState(null);
@@ -14,7 +14,7 @@ const SharedLayout = () => {
   return (
     <SC.SharedLayoutStyled>
       {ticket ? (
-        <TicketResult ticket={ticket} />
+        <ResultTicket ticket={ticket} />
       ) : (
         <Generator ticketSubmit={ticketSubmit} />
       )}
