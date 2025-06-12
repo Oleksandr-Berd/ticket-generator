@@ -1,8 +1,11 @@
 import * as SC from "./GeneratorFormStyled";
 import { useFormik } from "formik";
 import { validationTicketSchema } from "../../utils/ticketSchema";
+import { useRef } from "react";
 
 const GeneratorForm = ({ ticketSubmit }) => {
+  const fileInputRef = useRef(null);
+
   const formik = useFormik({
     initialValues: { avatar: null, fullName: "", email: "", gitLogins: "" },
     validationSchema: validationTicketSchema,
@@ -18,19 +21,27 @@ const GeneratorForm = ({ ticketSubmit }) => {
       <form onSubmit={formik.handleSubmit}>
         <div>
           <label>Upload Avatar</label>
-          <input
-            id="avatar"
-            name="avatar"
-            type="file"
-            onChange={(event) => {
-              formik.setFieldValue("avatar", event.currentTarget.files[0]);
-            }}
-          />
-          <img src="#" alt="uploadAvatarIcon" />
-          <p>Drag and drop or click to upload</p>
-             {formik.touched.avatar && formik.errors.avatar ? (
+          <SC.AvatarInputStyled>
+            <div onClick={() => fileInputRef.current?.click()}>
+              <input
+                ref={fileInputRef}
+                id="avatar"
+                name="avatar"
+                type="file"
+                accept="image/png, image/jpeg"
+                onChange={(event) => {
+                  formik.setFieldValue("avatar", event.currentTarget.files[0]);
+                }}
+              />
+            </div>
+            <p>Drag and drop or click to upload</p>
+          </SC.AvatarInputStyled>
+
+          {formik.touched.avatar && formik.errors.avatar ? (
             <div>{formik.errors.avatar}</div>
-          ) : (<div>Upload your photo (JPG or PNG, max size: 500KB).</div>)}
+          ) : (
+            <div>Upload your photo (JPG or PNG, max size: 500KB).</div>
+          )}
         </div>
 
         <SC.TextInputConStyled>
@@ -45,7 +56,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
             onBlur={formik.handleBlur}
             value={formik.values.fullName}
           />
-           {formik.touched.fullName && formik.errors.fullName && (
+          {formik.touched.fullName && formik.errors.fullName && (
             <div>{formik.errors.fullName}</div>
           )}
         </SC.TextInputConStyled>
@@ -81,12 +92,14 @@ const GeneratorForm = ({ ticketSubmit }) => {
             onBlur={formik.handleBlur}
             value={formik.values.gitLogin}
           />
-           {formik.touched.gitLogins && formik.errors.gitLogins && (
+          {formik.touched.gitLogins && formik.errors.gitLogins && (
             <div>{formik.errors.gitLogins}</div>
           )}
         </SC.TextInputConStyled>
 
-        <SC.SubmitButtonStyled type="submit">Generate My Ticket</SC.SubmitButtonStyled>
+        <SC.SubmitButtonStyled type="submit">
+          Generate My Ticket
+        </SC.SubmitButtonStyled>
       </form>
     </SC.GeneratorFormStyled>
   );
