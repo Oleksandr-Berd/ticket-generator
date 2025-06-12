@@ -1,6 +1,6 @@
 import * as SC from "./FeneratorFormStyled";
 import { Field, Formik, Form } from "formik";
-import { validationTicketSchema } from "../../utils/valid/ticketSchema";
+import { validationTicketSchema } from "../../utils/ticketSchema";
 
 const GeneratorForm = () => {
   return (
