@@ -1,7 +1,7 @@
 import * as SC from "./GeneratorFormStyled";
 import { useFormik } from "formik";
 import { validationTicketSchema } from "../../utils/ticketSchema";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 
 const GeneratorForm = ({ ticketSubmit }) => {
   const fileInputRef = useRef(null);
@@ -16,12 +16,16 @@ const GeneratorForm = ({ ticketSubmit }) => {
     },
   });
 
+const avatarURL = useMemo(() => {
+  return formik.values.avatar ? URL.createObjectURL(formik.values.avatar) : null;
+}, [formik.values.avatar]);
+
   return (
     <SC.GeneratorFormStyled>
       <form onSubmit={formik.handleSubmit}>
         <div>
           <label>Upload Avatar</label>
-          <SC.AvatarInputStyled>
+          <SC.AvatarInputStyled avatar={avatarURL}>
             <div onClick={() => fileInputRef.current?.click()}>
               <input
                 ref={fileInputRef}
@@ -34,7 +38,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
                 }}
               />
             </div>
-            <p>Drag and drop or click to upload</p>
+            <p>{formik.values.avatar ? "Test"  :"Drag and drop or click to upload"}</p>
           </SC.AvatarInputStyled>
 
           {formik.touched.avatar && formik.errors.avatar ? (
