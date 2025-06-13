@@ -6,6 +6,8 @@ export const TicketStyled = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  margin-bottom: 192px;
+
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
@@ -103,9 +105,21 @@ export const PersonDataCon = styled.div`
   }
 `;
 
-
 export const TicketNumber = styled.div`
-& > p{
+  min-height: 112px;
+
+  border-left: 1px dashed #8784a5;
+
+  align-content: center;
+
+  & > p {
     transform: rotate(90deg);
-}
-`
+
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    color: #8784a5;
+  }
+`;
