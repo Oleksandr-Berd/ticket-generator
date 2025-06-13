@@ -22,12 +22,16 @@ const GeneratorForm = ({ ticketSubmit }) => {
       : null;
   }, [formik.values.avatar]);
 
-const resetAvatar = () => {
-  formik.setFieldValue("avatar", null);
-  if (fileInputRef.current) {
-    fileInputRef.current.value = null; // ← clear the native file input
-  }
-};
+  const resetAvatar = () => {
+    formik.setFieldValue("avatar", null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = null; // ← clear the native file input
+    }
+  };
+
+  const changeImage = () => {
+    fileInputRef.current?.click();
+  };
 
   return (
     <SC.GeneratorFormStyled>
@@ -49,7 +53,12 @@ const resetAvatar = () => {
             </div>
             {formik.values.avatar ? (
               <div>
-                <button type="button" onClick={resetAvatar}>Remove image</button> <button type="button">Change image</button>
+                <button type="button" onClick={resetAvatar}>
+                  Remove image
+                </button>{" "}
+                <button type="button" onClick={changeImage}>
+                  Change image
+                </button>
               </div>
             ) : (
               <p> "Drag and drop or click to upload"</p>
