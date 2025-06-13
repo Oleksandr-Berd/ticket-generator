@@ -85,7 +85,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
             value={formik.values.fullName}
           />
           {formik.touched.fullName && formik.errors.fullName && (
-            <div>{formik.errors.fullName}</div>
+            <SC.ErrorCon>{formik.errors.fullName}</SC.ErrorCon>
           )}
         </SC.TextInputConStyled>
 
@@ -103,7 +103,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
             value={formik.values.email}
           />
           {formik.touched.email && formik.errors.email && (
-            <div>{formik.errors.email}</div>
+            <SC.ErrorCon>{formik.errors.email}</SC.ErrorCon>
           )}
         </SC.TextInputConStyled>
 
@@ -121,7 +121,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
             value={formik.values.gitLogin}
           />
           {formik.touched.gitLogins && formik.errors.gitLogins && (
-            <div>{formik.errors.gitLogins}</div>
+            <SC.ErrorCon>{formik.errors.gitLogins}</SC.ErrorCon>
           )}
         </SC.TextInputConStyled>
 

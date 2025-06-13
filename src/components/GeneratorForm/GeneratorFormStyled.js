@@ -16,6 +16,8 @@ export const GeneratorFormStyled = styled.div`
 `;
 
 export const TextInputConStyled = styled.div`
+  position: relative;
+
   margin-bottom: 24px;
 
   & input {
@@ -37,6 +39,37 @@ export const TextInputConStyled = styled.div`
       color: #d1d0d5;
     }
   }
+`;
+
+export const ErrorCon = styled.div`
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  transform: translate(0, 20px);
+
+  padding-left: 24px;
+
+  color: #f57463;
+
+&::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 16px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23f57463' stroke='%23D1D0D5' stroke-width='1.5'/%3E%3Cpath d='M8.004 10.462V7.596' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5.57v-.042' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 `;
 
 export const SubmitButtonStyled = styled.button`
@@ -96,7 +129,6 @@ export const AvatarInputStyled = styled.div`
   }
 `;
 
-
 export const AvatarButtonsCon = styled.div`
   & > button {
     padding-top: 4px;
@@ -116,7 +148,7 @@ export const AvatarButtonsCon = styled.div`
 `;
 
 export const UploadMessage = styled.div`
-position: relative;
+  position: relative;
 
   margin-bottom: 24px;
 
@@ -128,18 +160,16 @@ position: relative;
 
   color: #d1d0d5;
 
-  &::before{
-position: absolute;
-top: 0;
-left: 0;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-     display: inline-block;
-      content: "";
-      width: 16px;
-      height: 16px;
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round' d='M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z'/%3E%3Cpath fill='%23D1D0D5' d='M8.004 10.462V7.596ZM8 5.57v-.042Z'/%3E%3Cpath stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round' d='M8.004 10.462V7.596M8 5.569v-.042'/%3E%3C/svg%3E");
-
-
   }
 `;
