@@ -73,7 +73,7 @@ export const AvatarInputStyled = styled.div`
   border: 1px dashed;
   border-radius: 12px;
 
-  & > div {
+  & > div:first-of-type {
     display: inline-block;
 
     margin-bottom: 16px;

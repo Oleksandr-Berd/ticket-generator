@@ -16,9 +16,18 @@ const GeneratorForm = ({ ticketSubmit }) => {
     },
   });
 
-const avatarURL = useMemo(() => {
-  return formik.values.avatar ? URL.createObjectURL(formik.values.avatar) : null;
-}, [formik.values.avatar]);
+  const avatarURL = useMemo(() => {
+    return formik.values.avatar
+      ? URL.createObjectURL(formik.values.avatar)
+      : null;
+  }, [formik.values.avatar]);
+
+const resetAvatar = () => {
+  formik.setFieldValue("avatar", null);
+  if (fileInputRef.current) {
+    fileInputRef.current.value = null; // ← clear the native file input
+  }
+};
 
   return (
     <SC.GeneratorFormStyled>
@@ -38,7 +47,13 @@ const avatarURL = useMemo(() => {
                 }}
               />
             </div>
-            <p>{formik.values.avatar ? "Test"  :"Drag and drop or click to upload"}</p>
+            {formik.values.avatar ? (
+              <div>
+                <button type="button" onClick={resetAvatar}>Remove image</button> <button type="button">Change image</button>
+              </div>
+            ) : (
+              <p> "Drag and drop or click to upload"</p>
+            )}
           </SC.AvatarInputStyled>
 
           {formik.touched.avatar && formik.errors.avatar ? (
