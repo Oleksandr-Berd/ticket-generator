@@ -52,14 +52,14 @@ const GeneratorForm = ({ ticketSubmit }) => {
               />
             </div>
             {formik.values.avatar ? (
-              <div>
+              <SC.AvatarButtonsCon>
                 <button type="button" onClick={resetAvatar}>
                   Remove image
                 </button>{" "}
                 <button type="button" onClick={changeImage}>
                   Change image
                 </button>
-              </div>
+              </SC.AvatarButtonsCon>
             ) : (
               <p> "Drag and drop or click to upload"</p>
             )}
@@ -68,7 +68,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
           {formik.touched.avatar && formik.errors.avatar ? (
             <div>{formik.errors.avatar}</div>
           ) : (
-            <div>Upload your photo (JPG or PNG, max size: 500KB).</div>
+            <SC.UploadMessage>Upload your photo (JPG or PNG, max size: 500KB).</SC.UploadMessage>
           )}
         </div>
 
