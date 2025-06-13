@@ -14,4 +14,9 @@ justify-content: center;
     font-size: 20px;
     font-weight: 700;
 }
+
+& > img{
+    width: 24px;
+    height: 24px;
+}
 `
