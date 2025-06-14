@@ -25,7 +25,12 @@ export const TicketStyled = styled.div`
     padding-right: 64px;
     padding-bottom: 24px;
 
-background-size: contain;
+    background-size: contain;
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 200px;
+    padding-right: 200px;
   }
 `;
 

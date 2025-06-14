@@ -3,10 +3,21 @@ import styled from "@emotion/styled";
 export const GeneratorFormStyled = styled.div`
   text-align: left;
 
-@media (min-width: 768px){
+  @media (min-width: 768px) {
     padding-left: 92px;
     padding-right: 92px;
-}
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 215px;
+    padding-right: 215px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+    }
+  }
 
   & label {
     display: inline-block;
@@ -24,6 +35,12 @@ export const TextInputConStyled = styled.div`
   position: relative;
 
   margin-bottom: 24px;
+
+  &.errorFullname, &.errorEmail, &.errorLogin {
+    & input {
+      border: 1px solid #ff0000;
+    }
+  }
 
   & input {
     width: 100%;
@@ -43,6 +60,14 @@ export const TextInputConStyled = styled.div`
     &::placeholder {
       color: #d1d0d5;
     }
+
+    @media (min-width: 1280px) {
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
+    }
   }
 `;
 
@@ -58,23 +83,22 @@ export const ErrorCon = styled.div`
 
   color: #f57463;
 
-&::before {
-  position: absolute;
-  top: 0;
-  left: 0;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  display: inline-block;
-  content: "";
-  width: 16px;
-  height: 16px;
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23f57463' stroke='%23D1D0D5' stroke-width='1.5'/%3E%3Cpath d='M8.004 10.462V7.596' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5.57v-.042' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23f57463' stroke='%23D1D0D5' stroke-width='1.5'/%3E%3Cpath d='M8.004 10.462V7.596' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5.57v-.042' stroke='%23D1D0D5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 `;
 
 export const SubmitButtonStyled = styled.button`
@@ -93,6 +117,14 @@ export const SubmitButtonStyled = styled.button`
   color: #0d082d;
 
   border-radius: 16px;
+
+  @media (min-width: 1280px) {
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const AvatarInputStyled = styled.div`
@@ -148,6 +180,14 @@ export const AvatarButtonsCon = styled.div`
 
     &:first-of-type {
       text-decoration: underline;
+    }
+
+    @media (min-width: 1280px) {
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
     }
   }
 `;

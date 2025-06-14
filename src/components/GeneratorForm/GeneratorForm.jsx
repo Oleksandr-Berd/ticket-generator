@@ -72,7 +72,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
           )}
         </div>
 
-        <SC.TextInputConStyled>
+        <SC.TextInputConStyled className={formik.touched.fullName && formik.errors.fullName ? "errorFullname" : "null"}>
           <label htmlFor="fullName">
             <h4>Full Name</h4>
           </label>
@@ -89,7 +89,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
           )}
         </SC.TextInputConStyled>
 
-        <SC.TextInputConStyled>
+        <SC.TextInputConStyled className={formik.touched.email && formik.errors.email ? "errorEmail" : "null"}>
           <label htmlFor="email">
             <h4>Email Address</h4>
           </label>
@@ -107,7 +107,7 @@ const GeneratorForm = ({ ticketSubmit }) => {
           )}
         </SC.TextInputConStyled>
 
-        <SC.TextInputConStyled>
+        <SC.TextInputConStyled className={formik.touched.gitLogins && formik.errors.gitLogins ? "errorLogin" : "null"}>
           <label htmlFor="gitLogins">
             <h4>GitHub Username</h4>
           </label>
