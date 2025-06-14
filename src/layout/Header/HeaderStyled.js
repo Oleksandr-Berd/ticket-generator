@@ -10,4 +10,11 @@ export const HeaderStyled = styled.header`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
+
+  @media (min-width: 768px){
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;

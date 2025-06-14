@@ -18,6 +18,15 @@ export const TicketStyled = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (min-width: 768px) {
+    padding-top: 24px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 24px;
+
+background-size: contain;
+  }
 `;
 
 export const LogoTicket = styled.div`
@@ -25,6 +34,10 @@ export const LogoTicket = styled.div`
   flex-direction: row;
 
   margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 72px;
+  }
 `;
 
 export const TicketIconThumb = styled.div`

@@ -3,6 +3,11 @@ import styled from "@emotion/styled";
 export const GeneratorFormStyled = styled.div`
   text-align: left;
 
+@media (min-width: 768px){
+    padding-left: 92px;
+    padding-right: 92px;
+}
+
   & label {
     display: inline-block;
 

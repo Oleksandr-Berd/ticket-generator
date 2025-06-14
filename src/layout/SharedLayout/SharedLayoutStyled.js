@@ -13,4 +13,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-repeat: no-repeat;
 background-size: contain;
 background-position: bottom left;
+
+@media (min-width: 768px){
+    padding-left: 32px;
+    padding-right: 32px;
+}
 `
